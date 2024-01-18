@@ -2,10 +2,9 @@ import Image, { type StaticImageData } from 'next/image'
 import React from 'react'
 
 import { BriefcaseIcon } from '~/assets'
-import eightNinthsLogo from '~/assets/company/8ninths.jpeg'
-import abletiveLogo from '~/assets/company/abletive.png'
-import vvsLogo from '~/assets/company/vvs.png'
-import zolplayLogo from '~/assets/company/zolplay.png'
+
+import gjwyLogo from '~/assets/company/gjwy.png'
+import  rmtdLogo from  '~/assets/company/rmtd.png'
 
 type Resume = {
   company: string
@@ -16,35 +15,24 @@ type Resume = {
 }
 const resume: Resume[] = [
   {
-    company: '深圳市佐玩信息技术有限公司',
-    title: '创始人 CEO',
-    logo: zolplayLogo,
-    start: '2021',
+    company: '归家望月',
+    title: '一人公司',
+    logo: gjwyLogo,
+    start: '2023',
     end: {
       label: '至今',
       dateTime: new Date().getFullYear(),
     },
   },
   {
-    company: 'very very spaceship',
-    title: '软件工程师',
-    logo: vvsLogo,
-    start: '2018',
-    end: '2020',
-  },
-  {
-    company: '8ninths Inc.',
-    title: 'AR & 全栈工程师',
-    logo: eightNinthsLogo,
-    start: '2017',
-    end: '2018',
-  },
-  {
-    company: 'Abletive',
-    title: '创始人',
-    logo: abletiveLogo,
-    start: '2014',
-    end: '2016',
+    company: '睿梦天地',
+    title: '全栈工程师',
+    logo: rmtdLogo,
+    start: '2023',
+    end: {
+      label: '至今',
+      dateTime: new Date().getFullYear(),
+    },
   },
 ]
 

@@ -35,7 +35,7 @@ function OCD() {
   return (
     <span className="group">
       <SparkleIcon className="mr-1 inline-flex transform-gpu transition-transform duration-500 group-hover:rotate-180" />
-      <span>细节控</span>
+      <span>超级个体</span>
     </span>
   )
 }
@@ -44,7 +44,7 @@ function Founder() {
   return (
     <span className="group">
       <UserSecurityIcon className="mr-1 inline-flex group-hover:fill-zinc-600/20 dark:group-hover:fill-zinc-200/20" />
-      <span>创始人</span>
+      <span>想象家</span>
     </span>
   )
 }
@@ -80,10 +80,9 @@ export function Headline() {
         }}
       >
         <Balancer>
-          我是 Cali，
-          <PeekabooLink href="https://zolplay.com">佐玩</PeekabooLink>
-          创始人，目前带领着佐玩致力于创造一个充满创造力的工作环境，同时鼓励团队创造影响世界的产品。
-          我热爱开发，设计，创新，享受生活，以及在未知领域中探索。
+          我是Jrenc，公司名
+          <PeekabooLink href="https://gjwy.framer.website/">归家望月</PeekabooLink>
+          ，独立开发者。家在莱芜现居于青岛。希望人生可以做出一些think different的作品，或许它像鱿鱼干一样耐嚼，又或如爆裂鼓手那般热烈。但总之，希望当有一天我回望我的一生时，会由衷的感慨道，这真的是很有意思的旅途。
         </Balancer>
       </motion.p>
       <motion.div
@@ -125,7 +124,7 @@ export function Headline() {
         />
         <SocialLink href="/feed.xml" platform="rss" aria-label="RSS 订阅" />
         <SocialLink
-          href="mailto:hi@cali.so"
+          href="jrenc@vip.qq.com"
           aria-label="我的邮箱"
           platform="mail"
         />

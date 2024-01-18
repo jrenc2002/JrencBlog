@@ -3,7 +3,7 @@ import { clsxm } from '@zolplay/utils'
 import Image from 'next/image'
 import Link, { type LinkProps } from 'next/link'
 
-import portraitImage from '~/assets/Portrait.png'
+import portraitImage from '~/assets/Portrait.jpg'
 import portraitAltImage from '~/assets/PortraitAlt.jpg'
 
 function AvatarContainer({ className, ...props }: ComponentProps) {
