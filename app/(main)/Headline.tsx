@@ -10,7 +10,7 @@ import { SocialLink } from '~/components/links/SocialLink'
 function Developer() {
   return (
     <span className="group">
-      <span className="font-mono">&lt;</span>开发者
+      <span className="font-mono">&lt;</span>创造力
       <span className="font-mono">/&gt;</span>
       <span className="invisible inline-flex text-zinc-300 before:content-['|'] group-hover:visible group-hover:animate-typing dark:text-zinc-500" />
     </span>
@@ -26,7 +26,7 @@ function Designer() {
         <span className="absolute -bottom-0.5 -left-0.5 h-1.5 w-1.5 border border-lime-700 bg-zinc-50 dark:border-lime-400" />
         <span className="absolute -right-0.5 -top-0.5 h-1.5 w-1.5 border border-lime-700 bg-zinc-50 dark:border-lime-400" />
       </span>
-      设计师
+      体验派
     </span>
   )
 }
@@ -82,7 +82,7 @@ export function Headline() {
         <Balancer>
           我是Jrenc，公司名
           <PeekabooLink href="https://gjwy.framer.website/">归家望月</PeekabooLink>
-          ，独立开发者。家在莱芜现居于青岛。希望人生可以做出一些think different的作品，或许它像鱿鱼干一样耐嚼，又或如爆裂鼓手那般热烈。但总之，希望当有一天我回望我的一生时，会由衷的感慨道，这真的是很有意思的旅途。
+          ，独立开发者。家在莱芜现居于青岛。希望人生可以做出一些用心的think different的作品，或许它像鱿鱼干一样耐嚼，又或如爆裂鼓手那般热烈。但总之，希望当有一天我回望我的一生时，会由衷的感慨道，这真的是很有意思的旅途。
         </Balancer>
       </motion.p>
       <motion.div
