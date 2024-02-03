@@ -1,10 +1,10 @@
 export const seo = {
-  title: 'Cali Castle | 开发者、设计师、细节控、创始人',
+  title: 'Jrenc | 欢迎来到我大展身手的地方 ❛‿˂̵✧',
   description:
-    '我叫 Cali，一名开发者，设计师，细节控，同时也是佐玩创始人，目前带领着佐玩致力于创造一个充满创造力的工作环境，同时鼓励团队创造影响世界的产品。',
+    '我是 Jrenc，是一位追求表达与创造的人。我不是一个专精于某个领域的技能型人才，因为比起钻研技能，我认为一个项目的创造力，想象力，以及其独有的价值是更打动人心的。',
   url: new URL(
     process.env.NODE_ENV === 'production'
-      ? 'https://cali.so'
+      ? 'https://www.jrenc.com'
       : 'http://localhost:3000'
   ),
 } as const

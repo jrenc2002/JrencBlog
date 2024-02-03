@@ -1,17 +1,18 @@
 import * as React from 'react'
 import ReactMarkdown from 'react-markdown'
 
-import { parseDisplayName } from '../lib/string'
+import { parseDisplayName } from '~/lib/string'
+
 import { Button, Heading, Hr, Img, Link, Section, Text } from './_components'
 import Layout from './Layout'
 
 const NewReplyCommentEmail = ({
-  postLink = 'https://cali.so',
+  postLink = 'https://www.jrenc.com',
   postTitle = '测试文章 Lorem ipsum dolor sit amet, consectetur adipisicing elit',
   postImageUrl = 'https://cn.zolplay.com/api/og?title=测试文章',
   userFirstName = 'Cali',
   userLastName = 'Castle',
-  userImageUrl = 'https://cali.so/icon.png',
+  userImageUrl = 'https://www.jrenc.com/icon.png',
   commentContent = '*测试评论*\n- Wow wtf\n- Cool',
 }: {
   postLink?: string | null

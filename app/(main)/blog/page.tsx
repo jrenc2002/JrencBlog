@@ -6,7 +6,7 @@ import { Container } from '~/components/ui/Container'
 import { BlogPosts } from './BlogPosts'
 
 const description =
-  '写博客文章是我比较喜欢的沉淀分享方式，我希望能够把好用的技术知识传递给更多的人。我比较喜欢围绕着技术为主的话题，但是也会写一些非技术的话题，比如设计、创业、企业管理、生活随笔等等。'
+  '文字表达是我输出自己的一种方式，输出对我而言就是我将我心中所想与现实进行碰撞。碰撞后所剩的残渣，就是我的自我。简而言之便是，自我源自于反馈。'
 export const metadata = {
   title: '我的博客',
   description,
@@ -27,7 +27,7 @@ export default function BlogPage() {
     <Container className="mt-16 sm:mt-24">
       <header className="max-w-2xl">
         <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-          欢迎光临我的博客
+          表达自我的工作台੭ ᐕ)੭*⁾⁾
         </h1>
         <p className="my-6 text-base text-zinc-600 dark:text-zinc-400">
           <Balancer>{description}</Balancer>

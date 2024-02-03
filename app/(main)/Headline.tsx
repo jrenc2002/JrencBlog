@@ -98,27 +98,27 @@ export function Headline() {
         }}
       >
         <SocialLink
-          href="https://cali.so/twitter"
+          href="https://www.jrenc.com/twitter"
           aria-label="我的推特"
           platform="twitter"
         />
         <SocialLink
-          href="https://cali.so/youtube"
+          href="https://www.jrenc.com/youtube"
           aria-label="我的 YouTube"
           platform="youtube"
         />
         <SocialLink
-          href="https://cali.so/bilibili"
+          href="https://www.jrenc.com/bilibili"
           aria-label="我的 Bilibili"
           platform="bilibili"
         />
         <SocialLink
-          href="https://cali.so/github"
+          href="https://www.jrenc.com/github"
           aria-label="我的 GitHub"
           platform="github"
         />
         <SocialLink
-          href="https://cali.so/tg"
+          href="https://www.jrenc.com/tg"
           aria-label="我的 Telegram"
           platform="telegram"
         />

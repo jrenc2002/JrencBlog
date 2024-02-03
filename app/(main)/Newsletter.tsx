@@ -82,7 +82,7 @@ export function Newsletter({ subCount }: { subCount?: string }) {
         <span className="ml-2">动态更新</span>
       </h2>
       <p className="mt-2 text-xs text-zinc-600 dark:text-zinc-400 md:text-sm">
-        <span>喜欢我的内容的话不妨订阅支持一下 🫶</span>
+        <span>喜欢我的话可以订阅支持一下 (✧∇✧)</span>
         <br />
         {subCount && (
           <span>
