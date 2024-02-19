@@ -49,7 +49,7 @@
   font-size: 12px;
 }
 
-.dark {
+.dark {}
   .🔒 , .cl-formField p, .cl-formField p[aria-live="polite"], .cl-formFieldInputShowPasswordButton {
     @apply text-zinc-400;
   }
@@ -158,4 +158,3 @@
   .cl-identityPreviewEditButton {
     @apply text-zinc-200;
   }
-}
