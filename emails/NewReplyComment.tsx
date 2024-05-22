@@ -1,8 +1,7 @@
 import * as React from 'react'
 import ReactMarkdown from 'react-markdown'
 
-import { parseDisplayName } from '~/lib/string'
-
+import { parseDisplayName } from '../lib/string'
 import { Button, Heading, Hr, Img, Link, Section, Text } from './_components'
 import Layout from './Layout'
 

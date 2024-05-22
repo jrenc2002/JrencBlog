@@ -19,16 +19,20 @@ import { db } from '~/db'
 import { comments } from '~/db/schema'
 import { url } from '~/lib'
 import { truncate } from '~/lib/string'
-import { clientFetch } from '~/sanity/lib/client'
+import { client } from '~/sanity/lib/client'
 
 export default async function AdminCommentsPage() {
   const {
     rows: [commentsCount],
-  } = await db.execute<{ today_count: number }>(
+  } = await db.execute<{
+    today_count: number
+    this_week_count: number
+    this_month_count: number
+  }>(
     sql`SELECT 
-  (SELECT COUNT(*) FROM comments WHERE DATE(created_at) = CURDATE()) as today_count,
-  (SELECT COUNT(*) FROM comments WHERE YEARWEEK(created_at, 1) = YEARWEEK(CURDATE(), 1)) as this_week_count,
-  (SELECT COUNT(*) FROM comments WHERE YEAR(created_at) = YEAR(CURDATE()) AND MONTH(created_at) = MONTH(CURDATE())) as this_month_count`
+  (SELECT COUNT(*) FROM comments WHERE created_at::date = CURRENT_DATE) AS today_count,
+  (SELECT COUNT(*) FROM comments WHERE EXTRACT('YEAR' FROM created_at) = EXTRACT('YEAR' FROM CURRENT_DATE) AND EXTRACT('WEEK' FROM created_at) = EXTRACT('WEEK' FROM CURRENT_DATE)) AS this_week_count,
+  (SELECT COUNT(*) FROM comments WHERE EXTRACT(YEAR FROM created_at) = EXTRACT(YEAR FROM CURRENT_DATE) AND EXTRACT(MONTH FROM created_at) = EXTRACT(MONTH FROM CURRENT_DATE)) AS this_month_count`
   )
 
   const latestComments = await db
@@ -38,7 +42,7 @@ export default async function AdminCommentsPage() {
     .limit(15)
   // get unique post IDs from comments
   const postIds = [...new Set(latestComments.map((comment) => comment.postId))]
-  const posts = await clientFetch<
+  const posts = await client.fetch<
     { _id: string; title: string; slug: string }[]
   >(
     `*[_type == "post" && (_id in [${postIds

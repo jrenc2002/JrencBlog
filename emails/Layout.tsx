@@ -1,7 +1,6 @@
 import * as React from 'react'
 
-import { emailConfig } from '~/config/email'
-
+import { emailConfig } from '../config/email'
 import {
   Body,
   Container,

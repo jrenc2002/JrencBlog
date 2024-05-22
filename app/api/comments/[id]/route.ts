@@ -63,7 +63,7 @@ export async function GET(req: NextRequest, { params }: Params) {
             ...rest,
             id: CommentHashids.encode(id),
             parentId: parentId ? CommentHashids.encode(parentId) : null,
-          } as PostIDLessCommentDto)
+          }) as PostIDLessCommentDto
       )
     )
   } catch (error) {
@@ -120,7 +120,7 @@ export async function POST(req: NextRequest, { params }: Params) {
         lastName: user.lastName,
         imageUrl: user.imageUrl,
       },
-      parentId: parentId ? (parentId as bigint) : null,
+      parentId: parentId ? (parentId as number) : null,
     }
 
     if (parentId && env.NODE_ENV === 'production') {
@@ -131,18 +131,13 @@ export async function POST(req: NextRequest, { params }: Params) {
         .from(comments)
         .where(eq(comments.id, parentId as number))
       if (parentUserFromDb && parentUserFromDb.userId !== user.id) {
-        const {
-          primaryEmailAddressId,
-          emailAddresses,
-          imageUrl,
-          firstName,
-          lastName,
-        } = await clerkClient.users.getUser(parentUserFromDb.userId)
+        const { primaryEmailAddressId, emailAddresses } =
+          await clerkClient.users.getUser(parentUserFromDb.userId)
         const primaryEmailAddress = emailAddresses.find(
           (emailAddress) => emailAddress.id === primaryEmailAddressId
         )
         if (primaryEmailAddress) {
-          await resend.sendEmail({
+          await resend.emails.send({
             from: emailConfig.from,
             to: primaryEmailAddress.emailAddress,
             subject: '👋 有人回复了你的评论',
@@ -160,11 +155,16 @@ export async function POST(req: NextRequest, { params }: Params) {
       }
     }
 
-    const { insertId } = await db.insert(comments).values(commentData)
+    const [newComment] = await db
+      .insert(comments)
+      .values(commentData)
+      .returning({
+        newId: comments.id,
+      })
 
     return NextResponse.json({
       ...commentData,
-      id: CommentHashids.encode(insertId),
+      id: CommentHashids.encode(newComment.newId),
       createdAt: new Date(),
       parentId: hashedParentId,
     } satisfies CommentDto)
