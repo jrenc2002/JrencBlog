@@ -47,7 +47,7 @@ export default function Layout({
                   href="https://www.jrenc.com"
                   className="text-zinc-700 underline"
                 >
-                  <strong>Cali Castle</strong>
+                  <strong>Jrenc</strong>
                 </Link>
                 <br />
                 开发者、设计师、细节控、创始人
