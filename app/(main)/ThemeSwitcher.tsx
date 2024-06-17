@@ -1,22 +1,21 @@
 'use client'
 
+import '~/assets/css/theme-swicher.css'
+
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTheme } from 'next-themes'
 import React from 'react'
-import '~/assets/css/theme-swicher.css'
-import { LightningIcon, MoonIcon, SunIcon } from '~/assets'
+
 import { Tooltip } from '~/components/ui/Tooltip'
 
 const themes = [
   {
     label: '浅色模式',
     value: 'light',
-    icon: SunIcon,
   },
   {
     label: '深色模式',
     value: 'dark',
-    icon: MoonIcon,
   },
 ]
 export function ThemeSwitcher() {
