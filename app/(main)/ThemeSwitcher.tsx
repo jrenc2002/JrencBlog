@@ -23,10 +23,7 @@ export function ThemeSwitcher() {
   const [mounted, setMounted] = React.useState(false)
   const [open, setOpen] = React.useState(false)
   const { setTheme, theme, resolvedTheme } = useTheme()
-  const ThemeIcon = React.useMemo(
-    () => themes.find((t) => t.value === theme)?.icon ?? LightningIcon,
-    [theme]
-  )
+
 
   React.useEffect(() => setMounted(true), [])
 
